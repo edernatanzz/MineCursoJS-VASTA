@@ -1,76 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução ao JavaScript</title>
 
-  
-<style>
-#nome {
-height: 50px;
+    <style>
+ .class-rom_wapper{
+width: 30%;
+display: flex;
+justify-content: center;
+align-items:center;
+text-align:center ;
+flex-direction : column;
+margin: 35% auto ;
+border : 1px solid blue;
+padding : 10px;
+border-radius : 10px;
+
+ }            
+.class-rom_wapper input{
+width: 80%;
+margin : 5px ;
+height: 20%;
+border: 1px solid red;
+font-size: 14px;
+border-radius: 10px;
 
 }
-.cpf {
-    height: 50;
+#page{
+background-color:rgb(95, 124, 138);
 }
 
 
-</style>    
+    </style>
 </head>
-<body>
 
 
-    <form method = "GET">
-   <input type="text " class=" wapper" id = "nome" placeholder="Nome Completo"/><!--Nome -->
-   <br />
-<input type="text" class = "wapper" id = "email" placeholder=" Email"/><!--Email -->
-<br />
-<input type="text" class ="wapper" id= "cpf" placeholder="CPF"/><!--CPF -->
-<br />   
-<button type="button"> Salvar</button>
+<body id = "page">
+    <form class = "class-rom_wapper" method="GET">
+
+        <h1 class = "class-rom_wapper " >Oficina de Programação web     </h1>
+        <h2 class = "wapper-rom_wapper" >Formulário </h2>
+
+        <input type="text " class="wapper_nome" id="nome" placeholder="Nome Completo" />
+        <!--Nome -->
+        <br />
+        <input type="text" class="wapper_email" id="email" placeholder=" Email" />
+        <!--Email -->
+        <br />
+        <input type="text" class="wapper_cpf" id="cpf" placeholder="CPF" />
+        <!--CPF -->
+        <br />
+        <button type="button">Salvar</button>
     </form>
 
-<script>
-const nome = document.querySelector('#nome');
-nome.addEventListener('keyup',function(){
- if ( this.value.length > 20) {
-    alert   ('o input possui mais de 20 caracteres');
- }
-});
-// email
-const email = document.getElementById('email');
-email.addEventListener('blur', function(){
-if(this.value.indexOf('@') > -1) {
-console.log("é um email valido .");
 
 
-}else {
-console.log(" um email invalido .");
-
-}
-});
-
-const cpf = document.querySelector('#cpf');
-cpf.addEventListener('blur', function() {
-
-for(var i = 0, j = this.value.length; i < j; i++) {
-const char = this.value[i];
-
-if(! (char == '.' ||
-char == '-' || 
-(char >= 0 || char <= 9  ))) {
-console.error ("Invalid character")
 
 
-}else {
-    console.log("cpf valido ");
-}
-}
-})
+    <script>
+        const nome = document.querySelector("#nome");
+        nome.addEventListener("keyup", function () {
+            if (this.value.length > 20) {
+                alert("o input possui mais de 20 caracteres");
+            }
+        });
+        // email
+        const email = document.getElementById("email");
+        email.addEventListener("blur", function () {
+            if (this.value.indexOf("@") > -1) {
+                console.log("é um email valido .");
+            } else {
+                console.log(" um email invalido .");
+            }
+        });
 
-</script>
+        const cpf = document.querySelector("#cpf");
+        cpf.addEventListener("blur", function () {
+            for (var i = 0, j = this.value.length; i < j; i++) {
+                const char = this.value[i];
 
+                if (!(char == "." || char == "-" || char >= 0 || char <= 9)) {
+                    console.error("Invalid character");
+                } else {
+                    console.log("cpf valido ");
+                }
+            }
+        });
+    </script>
 </body>
+
 </html>
